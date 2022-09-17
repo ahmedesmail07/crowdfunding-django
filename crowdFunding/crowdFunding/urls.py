@@ -27,6 +27,7 @@ urlpatterns = [
     path('projects/',include('projects.urls')),
     path('search/',views.search),
     path('',views.home, name = 'home'),
+    path('categories/', include('categories.urls')),
 
     ]
 
