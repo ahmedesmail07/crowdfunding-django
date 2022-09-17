@@ -47,3 +47,5 @@ In This CrowdFunding Web App we will allow users to :
 	```
 	python manage.py runserver
 	```
+- Don't Forget To Make A Super User (iti-iti)
+- Don't Forget To Change My Email & My Pass (2-Auth-KEY)
