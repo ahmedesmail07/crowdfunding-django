@@ -12,7 +12,8 @@ In This CrowdFunding Web App we will allow users to :
 
 ## Built With:
 * [Django Framwork]
-* [Sqlite Database]
+* [PostgreSQL Database]
+* [Jaca Script]
 * [Html]
 * [CSS]
 * [Bootstarp]
