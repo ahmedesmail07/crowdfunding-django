@@ -133,7 +133,8 @@ def home(request):
             list(Project.objects.filter(id=p.get('project'))))
         print(hRatedProjects)
 
-    lFiveList = Project.objects.extra(order_by=['-created_at'])
+    # lFiveList = Project.objects.extra(order_by=['-created_at'])
+    lFiveList = Project.objects.order_by('-created_at')[:5]
     featuredList = Project.objects.all().filter(is_featured='True')
     context = {
         'latestFiveList': lFiveList,
@@ -142,7 +143,6 @@ def home(request):
     }
 
     return render(request, 'projects/Home.html', context)
-
 
 def show_tag(request, slug):
     tag = get_object_or_404(Tag, slug=slug)
