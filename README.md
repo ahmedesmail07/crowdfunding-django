@@ -12,7 +12,7 @@ In This CrowdFunding Web App we will allow users to :
 
 ## Built With:
 * [Django Framwork]
-* [PostgreSQL Database]
+* [SQlite Database]
 * [Java Script]
 * [Html]
 * [CSS]
