@@ -173,3 +173,7 @@ EMAIL_USE_TLS = True
 PASSWORD_RESET_TIMEOUT = 86400 # MAil Avilable for just only 24 * 60 * 60 
 # That's mean OneDay
 
+# LOGIN WITH EMAIL CONFIGRATION
+AUTHENTICATION_BACKENDS = [
+    'users.emailLogin.Email_Or_Username',
+]
