@@ -1,7 +1,7 @@
 from .models import *
 import json
 import re
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from .forms import ProjectsForm, ImageForm
 from django.http.response import HttpResponse, JsonResponse,HttpResponseForbidden
 from users.models import Profile
@@ -215,10 +215,13 @@ def donate(request, id):
         return redirect(f'/projects/projectDetails/{id}')
 
 def delete_project(request, id):
-    if request.method == 'POST':
-        project = get_object_or_404(Project,id=id)
-        if (request.user.profile.id != project.id):
-            raise HttpResponseForbidden("Not allowed")
+    # if request.method == 'POST':
+    project = get_object_or_404(Project,id=id)
+        # if (request.user.profile.id != project.id):
+        #     # raise HttpResponseForbidden("Not allowed")
+        #     return redirect(f"/users/profile/{project.id}")
 
-        project.delete()
-        return redirect(f'/users/profile/{request.user.profile.id}')
+    project.delete()
+    # url = reverse("users/profile")
+    return redirect(f'/users/profile/{request.user.profile.id}')
+    # return redirect(url)
