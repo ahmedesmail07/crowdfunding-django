@@ -17,17 +17,19 @@ class Profile(models.Model):
     facebook =  models.URLField(null=True, blank=True , verbose_name=("FaceBook"))
     country = CountryField()
     birth_date = models.DateField(null=True, blank=True, verbose_name=("BirthDate"))
-    user_image = models.ImageField(upload_to='images/users/', default='images/users/default.jpg')
+    user_image = models.ImageField(upload_to='images/users', default='images/users/R.jpg')
 
     def __str__(self):
+        
         return f'{self.user.username}'
-
         img = Image.open(self.user_image.path)
 
         if img.height > 300 or img.width > 300:
             output_size = (300, 300)
             img.thumbnail(output_size)
             img.save(self.user_image.path)
+
+     
 
 
 
