@@ -14,7 +14,7 @@ class Project(models.Model):
     target = models.IntegerField()
     start_date = models.DateTimeField(default=timezone.now)
     end_date = models.DateTimeField(default=timezone.now)
-    is_featured = models.BooleanField(default=False)
+    is_featured = models.BooleanField(default=True)
     category = models.ForeignKey("Category", on_delete=models.CASCADE)
     user = models.ForeignKey("users.Profile", on_delete=models.CASCADE)
     tags = TaggableManager()
