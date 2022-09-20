@@ -8,7 +8,7 @@ class ProjectsForm(forms.ModelForm):
     class Meta:
         model = Project
         fields = ['title', 'details', 'target',
-                  'start_date', 'end_date', 'category', 'tags']
+                  'start_date', 'end_date', 'category','is_featured', 'tags']
 
     def clean(self):
         cleaned_data = super().clean()
