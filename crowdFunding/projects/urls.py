@@ -12,5 +12,5 @@ urlpatterns = [
     path('create', views.create,name='create_project'),
     path('tags/<slug:slug>', views.show_tag,name='show_tag'),
     path('<int:id>/rate/<int:value>', views.rate_project, name='rate_project'),
-    path('<int:id>/delete', views.delete_project, name='delete_project')
-]
+    path('<int:id>/delete', views.delete_project, name='delete_project'),
+    path('search', views.search, name='search')]

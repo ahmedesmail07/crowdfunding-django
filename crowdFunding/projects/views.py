@@ -113,7 +113,6 @@ def create_comment(request, id):
             comment.save()
         return redirect(f'/projects/projectDetails/{id}')
 
-
 def list_categories(request):
     categories = Category.objects.all()
     return {
@@ -174,20 +173,44 @@ def report_comment(request, id):
                 comment_id=request.POST['comment_id'],
                 user=request.user.profile
             )
+            messages.success(request, "Your report sent sccussefully, We will look for it as soon as possible")
+
         else:
             messages.error(request, 'You reported this comment before!')
         return redirect(f'/projects/projectDetails/{id}')
 
 
 def search(request):
-    inp = request.GET.get('searchBox')
-    if inp:
-        project = Project.objects.filter(Q(title__icontains=inp))[:1]
+    if request.method == "GET":
+        query = request.GET.get('searchBox')
+        if query is not None:
+            projects = Q(title__icontains=query)
+            results =Project.objects.filter(projects).distinct()
+            print(results)
+            context = {
+                'currentUserId' : request.user.id,
+                'currentuserName' : request.user.username,
+                'projectOwnerId' : results[0].user_id,
+                'projectOwnerName' : results[0].user,
+                'mainProject' : results[0],
+                'Images': ProjectPicture.objects.filter(project_id=results[0].id)
+            }
+            relatedProjects = []
+            for project in results[1:]:
+                proj = {
+                    'relatedProj': project,
+                    'Images': ProjectPicture.objects.filter(project_id=project['id'])
+                }
+                relatedProjects.append(proj)
+                # project_list.append(ImageForm.objects.filter(project_id=project['project_id']))
+            context['related'] = relatedProjects
+            return render(request, 'projects/search.html', context)
+            # return redirect(f'/projects/projectDetails.html/')
+        else:
+            return render(request, 'projects/search.html')
+            # return redirect(f'/projects/projectDetails.html/')
     else:
-        inp = ' '
-    return showProject(request, project)
-
-
+        return render(request, 'projects/Home.html')
 @login_required
 def rate_project(request, id, value):
     if request.method == 'POST':

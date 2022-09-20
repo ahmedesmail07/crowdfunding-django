@@ -21,6 +21,7 @@ class Project(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
+
         return str(self.title)
 
 
@@ -77,3 +78,11 @@ class Rate(models.Model):
                                 ])
     project = models.ForeignKey("Project", on_delete=models.CASCADE)
     user = models.ForeignKey("users.Profile", on_delete=models.CASCADE)
+
+#
+# class Data(models.Model):
+#     title = models.CharField(max_length=100)
+#     tags = models.CharField(max_length=100)
+#
+#     def __str__(self):
+#         return self.first_name
