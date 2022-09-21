@@ -2,8 +2,9 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {%block content%}
-<h2>Search results</h2>
-
+<br>
+<h2 style="color: #138D75; font-family: Georgia">Search results</h2>
+<br>
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/comments.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/styleP.css' %}">
@@ -35,28 +36,16 @@
       </a>
 </div>
 
-{% comment %} <div class="data">
-      <h2 class="title"> {{pData.title }}</h2class>
-            <p class="desc"> {{pData.details }} </p>
-            <h4 class="title"> {{ pData.category }} </h4>
-            <h3 class="title"> {{ pData.target }} $ </h3class>
-                  <ul class="desc">
-                        <li>hello tag</li>
-                        <li> test tag</li>
-                  </ul>
-</div>
-{% endcomment %}
-
 <div class="card text-center">
       <div class="card-header">
             <h2>{{ mainProject.title }}</h2>
       </div>
       <div class="card-body">
-            <h3 style="font-weight: bold;" class="card-text text-left"> created by <a target="_blank"
-                        href="{% url 'users:profile' projectOwnerId %}">{{ projectOwnerName }}</a></h3>
+            <h5 style="font-weight: bold;" class="card-text text-left"> created by <a target="_blank"
+                        href="{% url 'users:profile' projectOwnerId %}">{{ projectOwnerName }}</a></h5>
 
             <br>
-            <h1 class="card-text text-left"> {{ mainProject.details }}</h1>
+            <h3 class="card-text text-left"> {{ mainProject.details }}</h3>
             <h3 class="card-title"> ${{ donations_amount }} raised of ${{ mainProject.target }} </h3>
 
             <div style="width:auto" class="stars">
@@ -108,12 +97,12 @@
       <div class="card text-center">
             <form action={% url 'donate' mainProject.id %} method="POST" style="margin-left: 220; margin-top: 10;">
                   <div class="donationbox">
-                        <div class="dollarsign">$</div>
+                        <div class="dollarsign"  style="background-color : #148F77">$</div>
                         <input class="donationamount " name="donate" maxlength="6" tabindex="1" type="text"
                               onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
-                              value="" required>
+                              value="" required  style="background-color : #148F77">
                         {% csrf_token %}
-                        <input class="submit" type="submit" value="Donate Now">
+                        <input class="submit" type="submit" value="Donate Now"   style="background-color : #148F77">
                   </div>
             </form>
       </div>

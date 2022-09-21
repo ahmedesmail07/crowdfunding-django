@@ -1,9 +1,8 @@
-{% extends 'projects/base.html' %}
+{% extends 'users/base.html' %}
 {% load static %}
 
 {% block head-css %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'users/nav.css' %}">
     <link href="{% static 'css/home.css' %}" rel="stylesheet" media="screen">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
@@ -21,11 +20,11 @@
                       <img src="/static/{{p.imgs.all.first.img_url}}" class="d-block slideCss">
                       </a>
                       <div class="carousel-caption d-none d-md-block">
-                      
+
                         <h5 class="sliderTitle" >{{p.title}}  </h5>
-                        
+
                         <p class="sliderDesc"> {{p.details}}</p>
-                        
+
                       </div>
                 </div>
              {% else %}
@@ -34,10 +33,10 @@
                       <img src="/static/{{p.imgs.all.first.img_url}}" class="d-block slideCss">
                       </a>
                       <div class="carousel-caption d-none d-md-block">
-                    
+
                         <h5 class="sliderTitle">{{p.title}} </h5>
                         <p class="sliderDesc"> {{p.details}} </p>
-                    
+
                       </div>
                 </div>
             {% endif %}
@@ -45,8 +44,8 @@
         </div>
     </div>
 
-    <h1 class="subTitle"> Latest Projects</h1> 
-    <hr>
+    <h1 class="subTitle" style="color : #138D75; font-family: Georgia"> Latest Projects</h1>
+
 
     <div class="row">
         {% for p in latestFiveList %}
@@ -87,8 +86,8 @@
         {% endfor %}
     </div>
 
-    <h1 class="subTitle"> Featured Projects</h1> 
-    <hr>
+    <h1 class="subTitle" style="color : #138D75; font-family: Georgia"> Featured Projects</h1>
+
 
     <div class="row">
         {% for p in fProject %}
@@ -103,16 +102,16 @@
                 </div>
             </div>
         {% endfor %}
-    </div>  
+    </div>
 
-    <h1 class="subTitle"> Our Categories </h1> 
-    <hr>
+    <h1 class="subTitle" style="color : #138D75; font-family: Georgia"> Our Categories </h1>
+
 
     <div class="row">
         {% for c in categs %}
             <div class="categs">
                 <a href="{% url 'show_cate' c.id %}">
-                <img src="/static/{{ c.cat_icon }}" class="card-img-top"> </a>
+                <img src="/static/{{ c.cat_icon }}" class="card-img-top" width="500" height="200"> </a>
                 <h5 class="card-title" style="text-align: center;">{{c.name }}</h5>
             </div>
         {% endfor %}

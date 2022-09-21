@@ -4,14 +4,17 @@
 {% load static %}
 {%block content%}
 <br>
-<h3>CATEGORY</h3>
+<h3 style="color: #138D75; font-family: Georgia">Category</h3>
+<div style="border : solid 1px ; padding : 15; padding-right: 20; margin : 50; margin-right: 500; border-radius: 1em; box-shadow: 5px 10px #EAECEE;
+border-color:#17A589">
 
 <form method="POST" action="" enctype="multipart/form-data" >
   {% csrf_token %}
     {{form}}
 <br>
-  <button type="submit" class="btn btn-success" >Submit</button>
+  <button type="submit" class="btn" style="background-color: #17A589" >Submit</button>
 </form>
+  </div>
 <script>
     inputs = document.querySelectorAll('input');
   select= document.querySelector('select')
