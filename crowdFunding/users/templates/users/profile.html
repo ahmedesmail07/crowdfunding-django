@@ -93,30 +93,30 @@
               <ul class="list-unstyled">
                 <li class="py-3 pl-2 border-bottom bg-light" >
 
-                  <span  class="text h3 mr-3" style="color : #1ABC9C" > <i class="fas fa-user"></i> User Name :</span>
-                  <span class="h4 text-muted">{{userprofile.first_name}} {{userprofile.last_name}}</span>
+                  <span  class="text h5 mr-3" style="color : #0E6251" > <i class="fas fa-user"></i> User Name :</span>
+                  <span class="h5 text-muted">{{userprofile.first_name}} {{userprofile.last_name}}</span>
                 </li>
 
                 <li class="py-3 pl-2 border-bottom bg-light">
-                  <span class="text h3 mr-3" style="color : #1ABC9C"> <i class="fas fa-envelope"></i> Email :</span>
-                  <span class="h4 text-muted">{{ userprofile.email }}</span>
+                  <span class="text h5 mr-3" style="color : #0E6251"> <i class="fas fa-envelope"></i> Email :</span>
+                  <span class="h5 text-muted">{{ userprofile.email }}</span>
                 </li>
                 <li class="py-3 pl-2 border-bottom bg-light">
-                  <span class="text h3 mr-3" style="color : #1ABC9C"> <i class="fab fa-facebook-square"></i> FaceBook :</span>
-                  <span class="h4 text-muted">{{userprofile.profile.facebook|default_if_none:'-------'}}</span>
+                  <span class="text h5 mr-3" style="color : #0E6251"> <i class="fab fa-facebook-square"></i> FaceBook :</span>
+                  <span class="h5 text-muted">{{userprofile.profile.facebook|default_if_none:''}}</span>
                 </li>
                 <li class="py-3 pl-2 border-bottom bg-light">
-                  <span class="text h3 mr-3" style="color : #1ABC9C"> <i class="fas fa-city"></i> country :</span>
-                  <span class="h4 text-muted">{{userprofile.profile.country.name|default_if_none:'-------'}}</span>
+                  <span class="text h5 mr-3" style="color : #0E6251"> <i class="fas fa-city"></i> country :</span>
+                  <span class="h5 text-muted">{{userprofile.profile.country.name|default_if_none:''}}</span>
                 </li>
                 <li class="py-3 pl-2 border-bottom bg-light">
-                  <span class="text h3 mr-3" style="color : #1ABC9C"> <i class="fas fa-birthday-cake"></i> Birth Date :</span>
-                  <span class="h4 text-muted">{{userprofile.profile.birth_date|default_if_none:'-------'}}</span>
+                  <span class="text h5 mr-3" style="color : #0E6251"> <i class="fas fa-birthday-cake"></i> Birth Date :</span>
+                  <span class="h5 text-muted">{{userprofile.profile.birth_date|default_if_none:''}}</span>
                 </li>
 
                 <li class="py-3 pl-2 border-bottom bg-light">
-                  <span class="text h3 mr-3" style="color : #1ABC9C"> <i class="fas fa-phone"></i> Phone :</span>
-                  <span class="h4 text-muted">{{userprofile.profile.phone|default_if_none:'-------'}}</span>
+                  <span class="text h5 mr-3" style="color : #0E6251"> <i class="fas fa-phone"></i> Phone :</span>
+                  <span class="h5 text-muted">{{userprofile.profile.phone|default_if_none:''}}</span>
                 </li>
 
               </ul>
