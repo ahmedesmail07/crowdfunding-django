@@ -75,10 +75,10 @@
                 {% csrf_token %}
       <input name='searchBox' class="form-control mr-sm-2" type="search" placeholder="Search"
                     aria-label="Search">
-      <span class="input-group-text text-white border-0" id="search-addon" style=" background-color: #117864"
-      type="submit" value="submit"  action =''>
+      <button class="input-group-text text-white border-0" id="search-addon" style=" background-color: #117864"
+      type="submit" value="submit"  action ="{%url 'search'%}">
         <i class="fas fa-search" style="color: white;"></i>
-      </span>
+      </button>
     </form>
 
       <ul class="navbar-nav">
@@ -101,7 +101,7 @@
             <ul class="navbar-nav" >
                 {% if user.is_authenticated %}
                 <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'users:profile' user.id  %}" style="margin-right: 0%; color: #117864">{{user.username}} <span
+                    <a class="nav-link" href="{% url 'users:profile' user.id  %}" style="margin-right: 0%; color: #117864">{{user.first_name}} <span
                             class="sr-only">(current)</span></a>
                 </li>
                 {% endif %}
