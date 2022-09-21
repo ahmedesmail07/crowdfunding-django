@@ -1,9 +1,13 @@
+{% extends "users/base.html" %}
+{%block title%}delete user{% endblock%}
+{% block content %}
 <form method="POST">
     {% csrf_token %}
     <fieldset class="form-group">
-        <legend class="border-bottom mb-4">Delete User Account</legend>
-            <p>Are you sure you want to delete your account?  This will permanently delete your
-               profile and any content you have generated.</p>
+        <legend class="border-bottom mb-4" style="color: rgb(156, 95, 95);">Delete User Account</legend>
+            <p>Are you sure you want to delete your account?</br>
+                This will permanently delete your
+               profile and any content of account</p>
             {{ form }}
     </fieldset>
     <div class="form-group">
@@ -11,3 +15,4 @@
 
     </div>
 </form>
+{% endblock %}
