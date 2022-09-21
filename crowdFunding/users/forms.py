@@ -13,13 +13,13 @@ class SignUpForm(UserCreationForm):
     first_name = forms.CharField(max_length=30, required=True)
     last_name = forms.CharField(max_length=30, required=True)
     email = forms.EmailField(max_length=254, required=True, help_text='Required. Inform a valid email address.')
-    birth_date = forms.DateField(required=False,help_text='Optional.')
+    #birth_date = forms.DateField(required=False,help_text='Optional.')
     phone = forms.CharField(max_length=11,required=False, help_text='Optional.')
     user_image = forms.ImageField(label = "upload your image",required=False, help_text='Optional.')
 
     class Meta:
         model = User
-        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2','user_image')
+        fields = ( 'first_name', 'last_name', 'email', 'password1', 'password2','user_image')
         unique_together = ('email',)
 
 class UserUpdateForm(forms.ModelForm):

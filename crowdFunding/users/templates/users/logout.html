@@ -1,6 +1,22 @@
 {% extends "users/base.html" %}
-
+ 
 {% block content %}
-  <p>Logged out!</p>  
-  <a href="{% url 'login'%}">Click here to login again.</a>
+  <!-- <p>Logged out!</p>  
+  <a href="{% url 'login'%}">Click here to login again.</a> -->
+
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  <body>
+    <div class="container">
+ 
+      <p>Log-out icon on a styled link button:
+        <a href="{% url 'login'%}" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </a>
+      </p>
+    </div>
+  </body>
+
+
 {% endblock %}
