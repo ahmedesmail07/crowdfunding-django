@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
+<br>
 <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
             {% for b in pPics %}
@@ -52,14 +53,14 @@
 {% endcomment %}
 <div class="card text-center">
       <div class="card-header">
-            <h2>{{pData.title }}</h2>
+            <h4>{{pData.title }}</h4>
       </div>
       <div class="card-body">
-            <h3 style="font-weight: bold;" class="card-text text-left"> created by <a target="_blank"
-                        href="{% url 'users:profile' pData.user.id %}">{{ pData.user.user.username }}</a></h3>
+            <h4  class="card-text text-left"> created by <a target="_blank"
+                        href="{% url 'users:profile' pData.user.id %}">{{ pData.user.user.first_name }} {{ pData.user.user.last_name }}</a></h4>
 
             <br>
-            <h1 class="card-text text-left"> {{ pData.details }}</h1>
+            <h2 class="card-text text-left"> {{ pData.details }}</h2>
             <h3 class="card-title"> ${{ donations_amount }} raised of ${{ pData.target }} </h3>
 
             <div style="width:auto" class="stars">

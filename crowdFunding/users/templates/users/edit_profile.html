@@ -10,13 +10,13 @@
            <form method="POST" enctype="multipart/form-data">
                {% csrf_token %}
                <fieldset class="form-group">
-                   <legend class="border-bottom mb-4">Update Info</legend>
+                   <h3 class="border-bottom mb-4" style="color: #138D75; font-family: Georgia">Update Info</h3>
                    {{ u_form|crispy }}
                    {{ p_form|crispy }}
                </fieldset>
                <div class="form-group">
 
-                   <button class="btn btn-info" type="submit">Update</button>
+                   <button class="btn btn-info" type="submit" style="background-color: #17A589">Update</button>
                    <a href = "{% url 'users:delete' userprofile.id  %}" class="btn btn-danger">Delete Profile</a>
                </div>
            </form>
