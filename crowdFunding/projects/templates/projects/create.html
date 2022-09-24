@@ -6,7 +6,7 @@
 {% block content %}
 <br>
 <h3 style="text-align : center; color: #138D75; font-family: Georgia"> Create Project</h3>
-<hr width="700">
+<hr width="100%">
   <form class="create_s" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="container">
@@ -35,6 +35,8 @@
   <br><br>
 {% block js %}
 <script src="https://github.com/bootstrap-tagsinput/bootstrap-tagsinput.git"></script>
+<script src="{%static 'users/js/script.js'%}"></script>
+
 {% endblock %}
 
 
