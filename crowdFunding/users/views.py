@@ -19,13 +19,6 @@ from django.core.mail import EmailMessage
 from django.views.generic import DetailView, TemplateView
 from django.urls import reverse, reverse_lazy
 
-# Create your views here.
-
-# def custom_login(request,**kwargs):
-#     if request.user.is_authenticated:
-#         return redirect('/')
-#     else:
-#         return login(request,**kwargs)
 def activate(request, uidb64, token):
     User = get_user_model()
     try:
@@ -155,8 +148,6 @@ def deleteuser(request, uid):
     }
 
     return render(request, 'users/delete_account.html', context)
-
-
 
 
 

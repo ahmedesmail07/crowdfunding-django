@@ -17,9 +17,6 @@ urlpatterns = [
     path('dashboard/<int:pk>', Dashboard.as_view(), name='dashboard'),
     path('feature_id/', feature_it, name='feature_it'),
     path('activate/<uidb64>/<token>', views.activate, name='activate'),
-    
-    # path('login/', views.custom_login),
-    # url(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
-    #     views.activate_account, name='activate')
+
 
 ]
