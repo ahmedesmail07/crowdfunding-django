@@ -121,7 +121,7 @@
             </div>
             {% csrf_token %}
 
-            <button class="btn btn-primary text-right" type="submit">Add comment</button>
+            <button class="btn btn-info text-right" type="submit">Add comment</button>
       </form>
 </div>
 {% for comment in pData.comment_set.all %}
@@ -144,7 +144,7 @@
 </div>
 <form action={% url 'report_comment' pData.id %} method="POST">
       <input type="hidden" value="{{comment.id}}" name="comment_id">
-      <button class="btn btn-primary text-left" name="report_comment" type="submit">Report comment</button>
+      <button class="btn btn-info text-left" name="report_comment" type="submit">Report comment</button>
       {% csrf_token %}
 </form>
 {% endfor %}
