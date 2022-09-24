@@ -16,6 +16,8 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from .tokens import account_activation_token
 from django.core.mail import EmailMessage
+from django.views.generic import DetailView, TemplateView
+from django.urls import reverse, reverse_lazy
 
 # Create your views here.
 
@@ -153,3 +155,46 @@ def deleteuser(request, uid):
     }
 
     return render(request, 'users/delete_account.html', context)
+
+
+
+
+
+class Dashboard(TemplateView):
+    model = Category 
+    template_name = 'users/dashboard.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update({
+            'projects': Project.objects.order_by('id'),
+            'categories': Category.objects.order_by('id')
+        })
+        return context
+
+    def post(self, request, *args, **kwargs):
+        if 'delete_project' in request.POST.keys():
+            project_id = self.kwargs['pk']
+            try:
+                project = Project.objects.filter(pk = project_id)
+            except: 
+                return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+            project.delete()
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+        elif 'delete_category' in request.POST.keys():
+            category_id = self.kwargs['pk']
+            try:
+                category = Category.objects.filter(pk = category_id)
+            except: 
+                return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+            category.delete()
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+        else:
+            return super().post(self, request, *args, **kwargs)
+
+
+def feature_it(request):
+    project = get_object_or_404(Project, pk = request.POST['project'])
+    project.is_featured = True
+    project.save()
+    return redirect(reverse('home'))
