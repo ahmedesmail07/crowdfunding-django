@@ -12,13 +12,11 @@
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                   <h1 style="text-align: center; margin-top: 20px; color: rgb(92, 18, 21); padding-bottom: 50px;">Logged out !</h1>  
                   <form action="{% url 'login'%}" method="get"  style=" display: inline-block;">
-                   <h5 style=" display: inline-block;"><button type="submit" 
-                       class="btn btn-outline-success btn-floating" data-mdb-ripple-color="dark"> login again </button></h5>
-                  </form>   
+                   <h6 style=" display: inline-block;"><button type="button" class="btn btn-success"> login again </button></h6>
+                  </form> 
                        &nbsp; &nbsp; &nbsp;
                   <form action="{% url 'home'%}" method="get"  style=" display: inline-block;">   
-                   <h5><button type="submit" 
-                       class="btn btn-outline-success btn-floating" data-mdb-ripple-color="dark">go home</button></h5>
+                   <h6><button type="button" class="btn btn-success">go home</button></h6>
                   </form>
               </div> 
              </div> 
