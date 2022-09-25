@@ -117,10 +117,11 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">#id</th>
-                        <th scope="col">Projects</th>
-                        <th scope="col">Featured</th>
-                        <th scope="col">delete </th>
+                       
+                        <th scope="col"><h5 style="color:rgb(15,168,135);">Project ID</h5></th>
+                        <th scope="col"><h5 style="color:rgb(15,168,135);">Project Name</h5></th>
+                        <th scope="col"><h5 style="color:rgb(15,168,135);">Featured Projects</h5></th>
+                        <th scope="col"><h5 style="color:rgb(15,168,135);">Delete Project</h5></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -134,7 +135,7 @@
                             <form action="{% url 'users:feature_it' %}" method="post">
                                 {% csrf_token %}
                                 <input type="hidden" name="project" value="{{project.id}}">
-                                <button class="btn btn-primary" {% if project.is_featured %} enable {% endif %} >Feature it </button>
+                                <button class="btn btn-outline-success btn-lg" {% if project.is_featured %} enable {% endif %} >Feature it </button>
                             </form>
 
                         </td>
@@ -143,7 +144,7 @@
                                 <form action="{% url 'users:dashboard' project.id %}" method="POST">
                                     {% csrf_token %}
                                     <input type="text" name="delete_project" style='display:none;' value="{{project.id}}"></input>
-                                    <button type='submit' class="btn btn-danger">Delete</button>
+                                    <button type='submit' class="btn btn btn-outline-danger btn-lg">Delete</button>
                                 </form>
                             </div>
                         </td>

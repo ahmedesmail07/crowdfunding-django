@@ -89,11 +89,13 @@
                 >Home</a
               >
             </li>
+            {% if request.user.is_superuser %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'createCategory' %}"
                 >Create Category
               </a>
             </li>
+            {% endif %}
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -121,11 +123,12 @@
               >
             </li>
             {% if request.user.is_superuser %}
-            <li>
-              <a
-                class="dropdown-item"
+            <li class="nav-item">
+              <a 
+                class="nav-link"
+                
                 href="{% url 'users:dashboard' user.id %}"
-                >admin</a
+                >Admin Dashboard</a
               >
             </li>
             {% endif %}
