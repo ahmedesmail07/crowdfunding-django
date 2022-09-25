@@ -1,5 +1,10 @@
 Update Day / 16-9-2022 / Make Sure You Will Install This Packages / Just only make this commands in your directory : pip install PACKAGENAME
 
+Django
+django-bootstrap4
+django-braces
+django-countries
+django-crispy-forms
 django-model-utils
 django-star-ratings
 django-taggit
@@ -11,11 +16,6 @@ pylint
 astroid
 beautifulsoup4
 crispy-forms-semantic-ui
-Django
-django-bootstrap4
-django-braces
-django-countries
-django-crispy-forms
 pylint-django
 pylint-plugin-utils
 pytz
