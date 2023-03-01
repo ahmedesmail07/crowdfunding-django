@@ -45,10 +45,9 @@ In This CrowdFunding Web App we will allow users to :
 	```
 - Install requirments
 	```
-	pip install (READ requirements.txt)
-	
-	make sure u follow instructions in requirements.txt 
-	follow it step by step 
+	After setting up your vertualenv just use one command to install all this requirements using the following command :
+	pip install -r requirements.txt
+
 	
 	```
 	
